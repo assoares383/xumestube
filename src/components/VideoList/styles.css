@@ -1,0 +1,4 @@
+.video-list {
+  grid-area: video-list;
+  background-color: blue;
+}
