@@ -6,8 +6,8 @@ const API_KEY = YTApi;
 export const searchVideoStart = () => {
   return {
     type: "BUSCA_VIDEO_INICIO",
-    carregando: true,
-    erro: false,
+    loading: true,
+    error: false,
   };
 };
 
@@ -15,25 +15,26 @@ export const searchVideoSuccess = (videos) => {
   return {
     type: "BUSCA_VIDEO_SUCESSO",
     videos,
-    carregando: false,
-    erro: false,
+    loading: false,
+    error: false,
   };
 };
 
 export const searchVideoError = () => {
   return {
     type: "BUSCA_VIDEO_ERRO",
-    carregando: false,
-    erro: true,
+    loading: false,
+    error: true,
   };
 };
 
 export const searchVideo = (term) => {
   return (dispatch) => {
     dispatch(searchVideoStart());
-    youtubeSearch(API_KEY, { q: term })
-      .then((data) => dispatch(searchVideoSuccess(data.items)))
-      .catch(() => dispatch(searchVideoError))
+    youtubeSearch(API_KEY, { q: term }).then((data) =>
+      dispatch(searchVideoSuccess(data.items)).catch(() =>
+        dispatch(searchVideoError)
+      )
     );
   };
 };
