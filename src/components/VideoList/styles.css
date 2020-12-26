@@ -1,4 +1,5 @@
 .video-list {
   grid-area: video-list;
-  background-color: blue;
+  background-color: #fffacd;
+  padding: 15px;
 }
