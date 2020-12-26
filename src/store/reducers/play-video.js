@@ -3,7 +3,7 @@ const INITIAL_STATE = {
 };
 
 export default function playVideo(state = INITIAL_STATE, action) {
-  if (action.type === "RESPRODUZ_VIDEO") {
+  if (action.type === "REPRODUZ_VIDEO") {
     return {
       video: action.video,
     };

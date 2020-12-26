@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { List, Image, Dimmer, Loader } from "semantic-ui-react";
 
+import { playVideo } from "../../store/actions/play-video";
+
 class VideoList extends Component {
   renderVideo(video) {
     return (
       <List animated verticalAlign="middle" key={video.etag}>
-        <List.Item>
+        <List.Item onClick={() => this.props.reproduces(video)}>
           <Image avatar src={video.snippet.thumbnails.default.url} />
           <List.Content>
             <List.Header>{video.snippet.title}</List.Header>
@@ -32,6 +34,12 @@ class VideoList extends Component {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    reproduces: (video) => dispatch(playVideo(video)),
+  };
+};
+
 const mapStateToProps = (state) => {
   return {
     videos: state.search.videos,
@@ -40,4 +48,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, null)(VideoList);
+export default connect(mapStateToProps, mapDispatchToProps)(VideoList);

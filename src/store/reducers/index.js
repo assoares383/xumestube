@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 
 import search from "./search";
-import playVideo from "./play-video";
+import reproduces from "./play-video";
 
 const rootReducer = combineReducers({
   search,
-  playVideo,
+  reproduces,
 });
 
 export default rootReducer;
