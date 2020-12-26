@@ -1,3 +1,0 @@
-const API_KEY = `${process.env.API_YOUTUBE}`;
-
-export default API_KEY;

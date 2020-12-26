@@ -13,8 +13,8 @@ function App() {
       <div className="container">
         <div className="content">
           <SeachBar />
-          <VideoList />
           <VideoPlayer />
+          <VideoList />
         </div>
       </div>
     </Provider>
