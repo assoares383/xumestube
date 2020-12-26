@@ -10,8 +10,8 @@ import VideoPlayer from "./components/VideoPlayer";
 function App() {
   return (
     <Provider store={store}>
-      <div className="container">
-        <div className="content">
+      <div className="wrapper">
+        <div className="container">
           <SeachBar />
           <VideoPlayer />
           <VideoList />

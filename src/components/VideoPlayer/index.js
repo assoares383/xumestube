@@ -7,7 +7,7 @@ const VideoPlayer = (props) => {
     <div className="video-player">
       {!props.video.id && (
         <Advertisement
-          style={{ height: "433px" }}
+          style={{ height: "720px", width: "100%" }}
           unit="top banner"
           test="Escolha um vídeo para reproduzir"
         ></Advertisement>
@@ -15,7 +15,7 @@ const VideoPlayer = (props) => {
       {props.video.id && (
         <div>
           <Embed
-            style={{ height: "433px" }}
+            style={{ height: "720px", width: "100%" }}
             id={props.video.id.videoId}
             source="youtube"
             placeholder="https://picsum.photos/seed/picsum/200/300"

@@ -3,9 +3,13 @@ import { Segment, Input } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { searchVideo } from "../../store/actions/video-search";
 
-import "./styles.css";
-
 class SeachBar extends Component {
+  constructor(props) {
+    super(props);
+
+    this.props.searchVideo("masterclass rocketseat");
+  }
+
   searchTerm = (e) => {
     if (e.keyCode === 13) {
       const term = e.target.value;

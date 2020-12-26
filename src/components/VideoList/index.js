@@ -7,12 +7,16 @@ import { playVideo } from "../../store/actions/play-video";
 class VideoList extends Component {
   renderVideo(video) {
     return (
-      <List animated verticalAlign="middle" key={video.etag}>
+      <List verticalAlign="middle" key={video.etag}>
         <List.Item onClick={() => this.props.reproduces(video)}>
-          <Image avatar src={video.snippet.thumbnails.default.url} />
-          <List.Content>
-            <List.Header>{video.snippet.title}</List.Header>
-          </List.Content>
+          <div>
+            <Image src={video.snippet.thumbnails.default.url} />
+          </div>
+          <div>
+            <List.Content>
+              <List.Header>{video.snippet.title}</List.Header>
+            </List.Content>
+          </div>
         </List.Item>
       </List>
     );

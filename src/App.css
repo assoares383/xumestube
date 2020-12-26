@@ -1,12 +1,44 @@
-.container {
-  max-width: 1140px;
+.wrapper {
+  max-width: 1800px;
   width: 100%;
   margin: auto;
 }
-.content {
+.container {
   display: grid;
   grid-template-areas:
     "search-bar search-bar search-bar search-bar"
     "video-player video-player video-player video-list"
     "video-player video-player video-player video-list";
+}
+
+.search-bar {
+  grid-area: search-bar;
+}
+
+.video-player {
+  grid-area: video-player;
+}
+
+.video-list {
+  grid-area: video-list;
+  padding: 15px;
+}
+
+.video-list .list .item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.video-list .list .item img {
+  width: 100%;
+}
+
+.video-list .item div:first-child {
+  max-width: 168px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.video-list .item div:last-child {
+  padding: 0;
 }
