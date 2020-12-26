@@ -1,11 +1,37 @@
 import React from "react";
+import { connect } from "react-redux";
+import { Advertisement, Embed } from "semantic-ui-react";
 
 const VideoPlayer = (props) => {
   return (
     <div className="video-player">
-      <h1>Video Player</h1>
+      {!props.video.id && (
+        <Advertisement
+          style={{ height: "433px" }}
+          unit="top banner"
+          test="Escolha um vídeo para reproduzir"
+        ></Advertisement>
+      )}
+      {props.video.id && (
+        <div>
+          <Embed
+            style={{ height: "433px" }}
+            id={props.video.id.videoId}
+            source="youtube"
+            placeholder="https://picsum.photos/seed/picsum/200/300"
+          />
+          <p>{props.video.snippet.title}</p>
+          <p>{props.video.snippet.description}</p>
+        </div>
+      )}
     </div>
   );
 };
 
-export default VideoPlayer;
+const mapStateToProps = (state) => {
+  return {
+    video: state.reproduces.video,
+  };
+};
+
+export default connect(mapStateToProps, null)(VideoPlayer);
